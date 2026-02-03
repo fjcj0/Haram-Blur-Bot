@@ -12,7 +12,7 @@ export async function checkImage(imageUrl) {
         content: [
           {
             type: "text",
-            text: `هل هذه الصورة تحتوي على تعري أو محتوى غير لائق؟`
+            content: `هل هذه الصورة تحتوي على فتاة أو امرأة بأي شكل كان، أو أي محتوى غير مناسب؟ ${imageUrl}`
           },
           {
             type: "image_url",
