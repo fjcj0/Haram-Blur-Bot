@@ -5,7 +5,7 @@ import { checkText } from './utils/checkText.js';
 import { checkImage } from './utils/checkImage.js';
 import { warn } from './utils/warn.js';
 import generateCsrfToken from './tools/csrf.js';
-import { rateLimiter, speedLimiter, browserOnly } from './tools/DDosProtection.js';
+import { rateLimiter, speedLimiter } from './tools/DDosProtection.js';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -27,7 +27,6 @@ app.use(cors({
     origin: process.env.SERVER,
     credentials: true
 }));
-app.use(browserOnly);
 app.use(rateLimiter);
 app.use(speedLimiter);
 app.use((request, response, next) => {
