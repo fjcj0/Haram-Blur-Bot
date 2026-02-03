@@ -50,6 +50,15 @@ app.get('/api/cron', (request, response) => {
         message: 'cron job started....'
     });
 });
+app.post('/api/telegram-webhook', async (req, res) => {
+  const update = req.body;
+  try {
+    await bot.processUpdate(update); 
+  } catch (err) {
+    console.error('❌ Webhook Error:', err);
+  }
+  res.sendStatus(200);
+});
 if (process.env.NODE_ENV !== 'development') {
     job.start();
 }
