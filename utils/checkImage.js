@@ -29,6 +29,7 @@ export async function checkImage(imageUrl) {
     });
     const content = chatCompletion.choices[0].message.content.trim();
     const parsed = JSON.parse(content.replace(/(\r\n|\n|\r)/gm, ""));
+    console.log(parsed.bad);
     return parsed.bad === true;
   } catch (err) {
     console.error("❌ checkImage error:", err);
