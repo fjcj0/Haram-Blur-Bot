@@ -11,6 +11,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import job from './tools/cron.js';
+import csrfProtection from './middleware/csrfProtection.js';
 if (!BOT_TOKEN || !GROQ_API_KEY) {
   console.error('❌ ضع BOT_TOKEN و GROQ_API_KEY');
   process.exit(1);
