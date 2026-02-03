@@ -24,7 +24,8 @@ export async function checkImage(imageUrl) {
       ],
       temperature: 0,
       max_completion_tokens: 1024,
-      top_p: 1
+      top_p: 1,
+      stream: false
     });
     const content = chatCompletion.choices[0].message.content.trim();
     const parsed = JSON.parse(content.replace(/(\r\n|\n|\r)/gm, ""));
