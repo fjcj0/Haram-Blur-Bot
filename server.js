@@ -53,7 +53,7 @@ app.get('/api/cron', (request, response) => {
 app.post('/api/telegram-webhook', async (req, res) => {
   const update = req.body;
   try {
-    await bot.processUpdate(update); 
+     bot.processUpdate(update); 
   } catch (err) {
     console.error('❌ Webhook Error:', err);
   }
