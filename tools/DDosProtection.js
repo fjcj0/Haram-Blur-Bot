@@ -26,6 +26,7 @@ const allowedBrowsers = [
     /Edg/i,
     /OPR/i,
     /Safari/i,
+    /TelegramBot/i
 ];
 const blockedUserAgents = [
     /curl/i,
