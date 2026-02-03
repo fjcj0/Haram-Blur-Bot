@@ -30,7 +30,7 @@ app.use(cors({
 app.use(rateLimiter);
 app.use(speedLimiter);
 app.use((request, response, next) => {
-    if (request.path === "/api/cron" || request.path === "/api/csrf-token") {
+    if (request.path === "/api/cron" || request.path === "/api/csrf-token" || request.path === "/api/telegram-webhook") {
         return next();
     }
     return csrfProtection(request, response, next);
