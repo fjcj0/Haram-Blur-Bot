@@ -6,14 +6,17 @@ export async function checkImage(imageUrl) {
       messages: [
         {
           role: "system",
-          content: "أجب فقط بصيغة JSON: {\"bad\":true} أو {\"bad\":false}"
+          content: `أنت روبوت لمراقبة محتوى الصور.
+أجب فقط بصيغة JSON: {"bad":true} أو {"bad":false}.
+- إذا كانت الصورة تحتوي على فتاة أو امرأة بأي شكل كان، ضع "bad": true.
+- إذا كانت الصورة لا تحتوي على أي فتاة أو امرأة، ضع "bad": false.`
         },
         {
           role: "user",
           content: [
             {
               type: "text",
-              text: "Does this image contain a woman or girl in any form? Reply only in JSON: {\"bad\":true} or {\"bad\":false}"
+              text: "هل هذه الصورة تحتوي على فتاة أو امرأة بأي شكل كان؟"
             },
             {
               type: "image_url",
